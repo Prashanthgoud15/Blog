@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Trending({ blog }) {
     let image='';
@@ -13,9 +14,9 @@ function Trending({ blog }) {
         break;
         default: image='/media/programming.jpg';
     }
-     return (
-<>
-        <div className="card" style={{width: '18rem'}}>
+ return (
+    <Link to={`/Blogs/${blog.id}`}>
+    <div className="card" style={{width: '18rem'}}>
   <img src={image} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">{blog.title}</h5>
@@ -25,7 +26,7 @@ function Trending({ blog }) {
     <a href="#" className="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-</>
+</Link>
      )
 }
 
